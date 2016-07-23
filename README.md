@@ -54,3 +54,45 @@ but when game play will be debugged then it is possible to implement following s
 1. application makes re-scale axes to transform personal space to ideal space
 1. app calculates differences with ideal sin function on fixed duration like 5 seconds
 1. in case when error is less than min then attempt is accepted
+
+## Possible Game Modes
+
+model - `Player`
+
+```
+    id,
+    Klan
+```
+
+### Global Dead Match
+every body against every body, winner has most of frags(succeed attempts) for all times
+
+model - `TopScores`
+```
+{
+    top_scores: [{player, score}],
+}
+```
+
+### Dally Dead Match
+
+every body against every during a week, it work also  with `TopScores`
+
+
+### Team Melee (Daily)
+each klan against each klan
+
+```
+{
+    scores: [team, score]
+}
+```
+
+### Geolocation competition
+geo-locations based on scale
+
+```
+{
+    cores: [geoHash, score]
+}
+```
