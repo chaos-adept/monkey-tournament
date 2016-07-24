@@ -3,21 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.min.js"></script>
+
+
 </head>
-<body>
+<body onload="onDomLoaded(event)">
     <h1> monkey tournament game </h1>
 
-    <script src="/socket.io/socket.io.js"></script>
+
+
+    <div id="userInfoPanel">
+        <input id="playerId" placeholder="playerId"/>
+        <button onclick="onRegisterRequest(event)">register</button>
+    </div>
+
+    <br/>
+    <div id="turnsPanel">
+        <input id="attempt" placeholder="command body (json)" type="number" value="0" />
+        <button onclick="onAttempt(event)">turn</button>
+        <span id="status"></span>
+        <br/>
+        <div id="scoresPanel">
+            <ol id="scores"></ol>
+        </div>
+    </div>
+
+
+
     <script>
         var playerTurnHash = 0;
-        var socket = io('http://localhost:3001');
+        var socket = io('', {'transports': ['websocket']});
         socket.on('connect', function(){ console.log('connected'); updateStatus('connected'); });
         socket.on('event', function(data){ console.log('event', data); });
         socket.on('disconnect', function(){ console.log('disconnected'); updateStatus('disconnected'); });
-        socket.on('welcome', function (playerId) { updateStatus('registered ' + playerId) });
 
+        socket.on('welcome', onRegister);
+        socket.on('scores', onScoresUpdate);
 
-        function onRegister(event) {
+        function onRegister(playerId) {
+            updateStatus('registered ' + playerId);
+            localStorage.username = playerId;
+            setVisibleUserInfoPanel(false);
+            setVisibleTurnsPanel(true);
+        }
+
+        function onRegisterRequest(event) {
             var playerId = document.getElementById('playerId').value;
             socket.emit('register', playerId);
         }
@@ -30,12 +69,29 @@
         function updateStatus(newStatus) {
             document.getElementById('status').innerText = newStatus;
         }
+
+        function onDomLoaded() {
+            document.getElementById('playerId').value = localStorage.username || '';
+
+            setVisibleUserInfoPanel(true);
+            setVisibleTurnsPanel(false);
+        }
+
+        function onScoresUpdate(scores) {
+            var s = _.map(scores, function (it) { return '<li>' + it.playerId + ' - ' + it.score + '</li>' }).join(' ');
+
+            var div = document.getElementById('scores');
+            div.innerHTML = s;
+        }
+
+        function setVisibleUserInfoPanel(visible) {
+            document.getElementById('userInfoPanel').className = visible ? 'visible' : 'hidden';
+        }
+
+        function setVisibleTurnsPanel(visible) {
+            document.getElementById('turnsPanel').className = visible ? 'visible' : 'hidden';
+        }
     </script>
 
-    <input id="playerId" placeholder="playerId"/>
-    <button onclick="onRegister(event)">register</button>
-    <input id="attempt" placeholder="command body (json)" type="number" value="0" />
-    <button onclick="onAttempt(event)">turn</button>
-    <span id="status"></span>
 </body>
 </html>
