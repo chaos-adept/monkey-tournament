@@ -53,8 +53,6 @@
 
         function onRegister(playerId) {
             updateStatus('registered ' + playerId);
-            localStorage.username = playerId;
-            setVisibleUserInfoPanel(false);
             setVisibleTurnsPanel(true);
         }
 
@@ -75,7 +73,7 @@
         function onDomLoaded() {
             document.getElementById('playerId').value = localStorage.username || '';
 
-            setVisibleUserInfoPanel(true);
+            setVisibleUserInfoPanel(false);
             setVisibleTurnsPanel(false);
         }
 
