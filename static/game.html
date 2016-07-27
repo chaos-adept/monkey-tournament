@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Game</title>
     <style type="text/css">
         .hidden {
             display: none;
@@ -32,7 +32,7 @@
     <div id="turnsPanel">
         <input id="attempt" placeholder="command body (json)" type="number" value="0" />
         <button onclick="onAttempt(event)">turn</button>
-        <span id="status"></span>
+        <span data-sid="player-name" id="status"></span>
         <br/>
         <div id="scoresPanel">
             <ol id="scores"></ol>
@@ -52,7 +52,7 @@
         socket.on('scores', onScoresUpdate);
 
         function onRegister(playerId) {
-            updateStatus('registered ' + playerId);
+            updateStatus(playerId);
             setVisibleTurnsPanel(true);
         }
 
