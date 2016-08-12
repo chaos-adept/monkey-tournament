@@ -6,7 +6,14 @@ on distributed exercise with horizontal bar. it is also known as `Monkey Bar`.
 the proposal of this game make exercise more funny,
 and skills grow faster, as well for connect multiple random people.
 
-# Game Flow
+# R1 Game
+----------------
+* provide social authorization
+* collect attempt by a period of the time, winner based on self entered attempts
+* persist all attempt in format ready for logstash 
+
+
+# Future Game Flow
 ---------------
 
 1. make exercise on a monkey bar

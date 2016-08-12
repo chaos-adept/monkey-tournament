@@ -58,6 +58,7 @@
     "passport-vkontakte": "^0.3.1",
     "passport.socketio": "^3.6.2",
     "promisify": "0.0.3",
+    "redis": "^2.6.2",
     "sinon": "^1.17.4",
     "socket.io": "^1.4.8",
     "socket.io-client": "^1.4.8"
