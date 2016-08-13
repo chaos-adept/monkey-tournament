@@ -38,7 +38,9 @@
             <ol id="scores"></ol>
         </div>
     </div>
+    <div id="profile">
 
+    </div>
 
 
     <script>
@@ -51,8 +53,18 @@
         socket.on('welcome', onRegister);
         socket.on('scores', onScoresUpdate);
 
-        function onRegister(playerId) {
-            updateStatus(playerId);
+        function onRegister(player) {
+
+            const s = `
+                <ul>
+                    <li><span><a href="${player.profileUrl}"> ${player.displayName} </a></span></li>
+                    <li><span>${player.id}</span></li>
+                    <li><span>${player.photos.map(it => `<img src="${it.value}"/>`)}</span></li>
+                </ul>
+            `;
+            var div = document.getElementById('profile');
+            div.innerHTML = s;
+
             setVisibleTurnsPanel(true);
         }
 
