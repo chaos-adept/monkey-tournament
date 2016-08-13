@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "run": "babel-node index.js",
-    "test": "mocha --compilers js:babel-register --require babel-polyfill ./lib/__tests__/**/*--specs.js",
-    "test:watch": "mocha --compilers js:babel-register --require babel-polyfill --watch ./lib/__tests__/**/*--specs.js",
+    "test": "mocha --compilers js:babel-register --require babel-polyfill ./lib/**/*--specs.js",
+    "test:watch": "mocha --compilers js:babel-register --require babel-polyfill --watch ./lib/**/*--specs.js",
     "test:integration": "mocha --compilers js:babel-register --require babel-polyfill ./lib/__tests__/**/*--integration-specs.js",
     "test:integration-debug": "mocha --compilers js:babel-register --require babel-polyfill --watch ./lib/__tests__/**/*--integration-specs.js"
   },
