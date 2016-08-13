@@ -32,7 +32,7 @@
     <div id="turnsPanel">
         <input id="attempt" placeholder="command body (json)" type="number" value="0" />
         <button onclick="onAttempt(event)">turn</button>
-        <span data-sid="player-name" id="status"></span>
+        <span id="status"></span>
         <br/>
         <div id="scoresPanel">
             <ol id="scores"></ol>
@@ -57,7 +57,7 @@
 
             const s = `
                 <ul>
-                    <li><span><a href="${player.profileUrl}"> ${player.displayName} </a></span></li>
+                    <li><span><a href="${player.profileUrl}"> <span data-sid="player-name">${player.displayName}</span> </a></span></li>
                     <li><span>${player.id}</span></li>
                     <li><span>${player.photos.map(it => `<img src="${it.value}"/>`)}</span></li>
                 </ul>
@@ -90,7 +90,9 @@
         }
 
         function onScoresUpdate(scores) {
-            var s = _.map(scores, function (it) { return '<li>' + it.playerId + ' - ' + it.score + '</li>' }).join(' ');
+            var s = _.map(scores, function (it) {
+                const imgTags = `<span>${it.player.photos.map(photo => `<img src="${photo.value}"/>`)}</span>`;
+                return '<li>' + imgTags + it.player.displayName + ' - ' + it.score + '</li>' }).join(' ');
 
             var div = document.getElementById('scores');
             div.innerHTML = s;
