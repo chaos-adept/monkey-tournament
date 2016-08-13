@@ -1,0 +1,11 @@
+{
+  "appenders": [
+    {
+      "type": "file",
+      "filename": "logs/monkey-tournament-attempts.log",
+      "maxLogSize": 20480,
+      "backups": 10,
+      "category": "attempts-logger"
+    }
+  ]
+}
