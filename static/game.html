@@ -44,6 +44,10 @@
 
 
     <script>
+
+        setVisibleUserInfoPanel(false);
+        setVisibleTurnsPanel(false);
+
         var playerTurnHash = 0;
         var socket = io('', {'transports': ['websocket']});
         socket.on('connect', function(){ console.log('connected'); updateStatus('connected'); });
@@ -54,7 +58,7 @@
         socket.on('scores', onScoresUpdate);
 
         function onRegister(player) {
-
+            console.log('registered', player);
             const s = `
                 <ul>
                     <li><span><a href="${player.profileUrl}"> <span data-sid="player-name">${player.displayName}</span> </a></span></li>
@@ -85,13 +89,12 @@
         function onDomLoaded() {
             document.getElementById('playerId').value = localStorage.username || '';
 
-            setVisibleUserInfoPanel(false);
-            setVisibleTurnsPanel(false);
+
         }
 
         function onScoresUpdate(scores) {
             var s = _.map(scores, function (it) {
-                const imgTags = `<span>${it.player.photos.map(photo => `<img src="${photo.value}"/>`)}</span>`;
+                const imgTags = `<span>${it.player.photos.map(function (photo) { return `<img src="${photo.value}"/>` })}</span>`;
                 return '<li>' + imgTags + it.player.displayName + ' - ' + it.score + '</li>' }).join(' ');
 
             var div = document.getElementById('scores');
