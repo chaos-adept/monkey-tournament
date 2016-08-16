@@ -129,7 +129,7 @@
 
     function onScoresUpdate(scores) {
         var s = _.map(scores, function (it) {
-            const imgTags = `<div>${it.player.photos.map(photo => `<img src="${photo.value}"/>`)}</div>`;
+            const imgTags = `<div>${it.player.photos.map(photo => `<img class="img-circle"  src="${photo.value}"/>`)}</div>`;
             return `<li class="media">
                         <div class="media-left media-middle"><div class="media-object">${imgTags}</div>  </div>
                         <div class="media-body">
