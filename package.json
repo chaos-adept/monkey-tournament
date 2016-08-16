@@ -4,7 +4,11 @@
   "description": "monkey tournament game",
   "main": "index.js",
   "scripts": {
-    "run": "babel-node index.js",
+    "start-server:debug": "babel-node ./lib/index.js",
+    "start-server": "node ./build/index.js",
+    "start-server:refresh": "npm run clean && npm run build && npm run start-server",
+    "clean": "rimraf build",
+    "build": "babel ./lib --out-dir build",
     "test": "mocha --compilers js:babel-register --require babel-polyfill ./lib/**/*--specs.js",
     "test:watch": "mocha --compilers js:babel-register --require babel-polyfill --watch ./lib/**/*--specs.js",
     "test:integration": "mocha --compilers js:babel-register --require babel-polyfill ./lib/__tests__/**/*--integration-specs.js",
@@ -40,6 +44,7 @@
     "chai-fuzzy": "^1.6.1",
     "fast-async": "^6.0.22",
     "mocha": "^2.5.3",
+    "rimraf": "^2.5.4",
     "selenium-webdriver": "^2.53.3",
     "superagent": "^2.1.0"
   },
