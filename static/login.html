@@ -4,23 +4,12 @@
     <meta charset="UTF-8">
     <title>Login</title>
 
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
 </head>
 <body>
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-xs-offset-9 col-md-8 col-md-offset-4">
+        <div>
                 <form action="/auth/vkontakte" method="get">
                     <input class="btn-primary btn-lg" data-sid="login-vk-submit" type="submit" value="Login by VK">
                 </form>
@@ -28,9 +17,9 @@
     </div>
     <div class="row">
 
-        <div class="col-xs-12 col-md-8">
+        <div >
             <hr/>
-            <h5>login for admins <small>please dont use it, login by social network</small></h5>
+            <h5>login for admins <b>please dont use it, login by social network</b></h5>
             <form action="/login" method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">user name</label>
@@ -48,16 +37,6 @@
 
 </div>
 
-<br/>
 
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "presets": ["es2015", "stage-0"],
+  "presets": ["es2015", "stage-0", "react"],
   "plugins": ["transform-object-assign",
               "transform-es2015-spread",
               "syntax-object-rest-spread",
@@ -9,7 +9,7 @@
   "compact" : false,
   "env": {
     "development": {
-      "presets": []
+      "presets": ["react-hmre"]
     }
   }
 }
