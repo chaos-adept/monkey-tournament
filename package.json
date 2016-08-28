@@ -58,7 +58,6 @@
     "lodash": "^4.15.0",
     "mocha": "^2.5.3",
     "moment": "^2.14.1",
-    "node-sass": "^3.8.0",
     "optimist": "^0.6.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
