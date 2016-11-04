@@ -9,7 +9,7 @@
     "start-server:refresh": "npm run clean && npm run build && npm run start-server",
     "clean": "rimraf build",
     "build": "npm run build:server && npm run build:webpack",
-    "build:server": "babel ./lib --out-dir build/server --require babel-polyfill --ignore ./lib/client",
+    "build:server": "babel ./lib --out-dir build/server --require babel-polyfill --ignore ./lib/client,__tests__",
     "build:webpack": "cross-env NODE_ENV=production webpack --config ./lib/webpack/webpack.config.prod.js --bail",
     "etc:version": "node etc/copy-version.js",
     "test": "mocha --compilers js:babel-register --require babel-polyfill ./lib/**/*--specs.js",
