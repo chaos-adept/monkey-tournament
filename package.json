@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-server:debug": "cross-env NODE_ENV=development babel-node ./lib/index.js",
+    "start-server:debug:coverage": "cross-env NODE_ENV=development babel-node ./node_modules/babel-istanbul/lib/cli.js cover --report html ./lib/index.js",
     "start-server": "cross-env NODE_ENV=production node ./build/server/index.js",
     "start-server:refresh": "npm run clean && npm run build && npm run start-server",
     "clean": "rimraf build",
@@ -13,6 +14,7 @@
     "build:webpack": "cross-env NODE_ENV=production webpack --config ./lib/webpack/webpack.config.prod.js --bail",
     "etc:version": "node etc/copy-version.js",
     "test": "babel-node ./node_modules/mocha/bin/_mocha ./lib/**/*--specs.js",
+    "test:coverage": "babel-node ./node_modules/babel-istanbul/lib/cli.js cover --report html ./node_modules/mocha/bin/_mocha ./lib/**/*--specs.js",
     "test:watch": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill --watch ./lib/**/*--specs.js",
     "test:integration": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill ./lib/__tests__/**/*--integration-specs.js",
     "test:integration-debug": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill --watch ./lib/__tests__/**/*--integration-specs.js"
@@ -33,6 +35,7 @@
   "devDependencies": {
     "babel-core": "6.11.4",
     "babel-eslint": "6.1.2",
+    "babel-istanbul": "^0.11.0",
     "babel-loader": "6.2.7",
     "babel-plugin-add-module-exports": "0.2.1",
     "babel-plugin-syntax-async-functions": "6.13.0",
@@ -55,6 +58,7 @@
     "fast-async": "6.0.22",
     "git-describe": "3.0.2",
     "install": "0.8.1",
+    "istanbul": "https://registry.npmjs.org/istanbul/-/istanbul-0.4.5.tgz",
     "lodash": "4.15.0",
     "mocha": "2.5.3",
     "moment": "2.14.1",
