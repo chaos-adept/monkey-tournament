@@ -17,6 +17,7 @@
     "server:test:coverage": "babel-node ./node_modules/babel-istanbul/lib/cli.js cover --report html ./node_modules/mocha/bin/_mocha ./lib/server/**/*--specs.js",
     "server:test:watch": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill --watch ./lib/server/**/*--specs.js",
     "server:test:integration": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill ./lib/server/__tests__/**/*--integration-specs.js",
+    "server:test:integration:coverage": "babel-node ./node_modules/babel-istanbul/lib/cli.js cover --report html ./node_modules/mocha/bin/_mocha ./lib/server/__tests__/**/*--integration-specs.js",
     "server:test:integration-debug": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill --watch ./lib/server/__tests__/**/*--integration-specs.js",
     "client:test:single-run": "cross-env NODE_ENV=test COVERAGE_ENABLED=false karma start --single-run --no-auto-watch --browsers PhantomJS ./lib/karma/karma.config.js",
     "client:test:single-run:coverage": "cross-env NODE_ENV=test COVERAGE_ENABLED=true karma start --single-run --no-auto-watch --browsers PhantomJS ./lib/karma/karma.config.js"
@@ -61,6 +62,7 @@
     "cross-env": "2.0.0",
     "css": "2.2.1",
     "css-loader": "0.23.1",
+    "fast-async": "https://registry.npmjs.org/fast-async/-/fast-async-6.0.22.tgz",
     "git-describe": "3.0.2",
     "install": "0.8.1",
     "istanbul": "https://registry.npmjs.org/istanbul/-/istanbul-0.4.5.tgz",

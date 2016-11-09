@@ -4,6 +4,7 @@
               "transform-es2015-spread",
               "syntax-object-rest-spread",
               "syntax-async-functions",
+              "fast-async",
               "transform-object-rest-spread"],
   "compact" : false,
   "env": {
