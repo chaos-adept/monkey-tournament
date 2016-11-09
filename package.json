@@ -16,8 +16,8 @@
     "server:test": "babel-node ./node_modules/mocha/bin/_mocha ./lib/server/**/*--specs.js",
     "server:test:coverage": "babel-node ./node_modules/babel-istanbul/lib/cli.js cover --report html ./node_modules/mocha/bin/_mocha ./lib/server/**/*--specs.js",
     "server:test:watch": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill --watch ./lib/server/**/*--specs.js",
-    "server:test:integration": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill ./lib/server/__tests__/**/*--integration-specs.js",
-    "server:test:integration:coverage": "babel-node ./node_modules/babel-istanbul/lib/cli.js cover --report html ./node_modules/mocha/bin/_mocha ./lib/server/__tests__/**/*--integration-specs.js",
+    "server:test:integration": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill ./lib/server/__tests__/**/*-specs.js",
+    "server:test:integration:coverage": "babel-node ./node_modules/babel-istanbul/lib/cli.js cover --report html ./node_modules/mocha/bin/_mocha ./lib/server/__tests__/**/*-specs.js",
     "server:test:integration-debug": "babel-node ./node_modules/mocha/bin/_mocha --require babel-polyfill --watch ./lib/server/__tests__/**/*--integration-specs.js",
     "client:test:single-run": "cross-env NODE_ENV=test COVERAGE_ENABLED=false karma start --single-run --no-auto-watch --browsers PhantomJS ./lib/karma/karma.config.js",
     "client:test:single-run:coverage": "cross-env NODE_ENV=test COVERAGE_ENABLED=true karma start --single-run --no-auto-watch --browsers PhantomJS ./lib/karma/karma.config.js"
