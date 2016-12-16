@@ -10,4 +10,3 @@ and skills grow faster, as well for connect multiple random people.
 ----------------
 * provide social authorization
 * collect attempt by a period of the time, winner based on self entered attempts
-* persist all attempt in format ready for logstash
