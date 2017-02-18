@@ -18,12 +18,14 @@ Redis
 1. installed nodejs [https://nodejs.org/en/]
 1. install Redis [https://redis.io/topics/quickstart] (windows - [https://github.com/ServiceStack/redis-windows/tree/master/downloads])
 1. redis should work on 127.0.0.1:6379 (values by default)
+
 VK Authorization
-1. set `host` and `port` as env variables for authorization callback urls
-1. VK monkeybar app has following
-1. 1. http://`localhost`:`3000`/auth/vkontakte/callback
-1. 1. http://`localhost`:`80`/auth/vkontakte/callback
-1. 1. http://`127.0.0.1`:`3000`/auth/vkontakte/callback
+* set `host` and `port` as env variables for authorization callback urls
+
+VK monkeybar app has following
+* http://`localhost`:`3000`/auth/vkontakte/callback
+* http://`localhost`:`80`/auth/vkontakte/callback
+* http://`127.0.0.1`:`3000`/auth/vkontakte/callback
 
 # Regular
 1. `npm run build`
