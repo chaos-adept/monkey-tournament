@@ -34,12 +34,23 @@ VK monkeybar app has following
 
 
 # Debug (works with webpack hmr)
-1. `npm run server:start:debug`
+    
+    `npm run server:start:debug`
 
 # Unit Tests
-1. `npm run server:test:watch` - server side
-1. `npm run client:test:single-run` - client side
+    
+    `npm run server:test:watch` - server side
+    
+    `npm run client:test:single-run` - client side
 
 # Integration Tests (redis is required)
-1. `npm run server:test:integration`
+
+Integration tests are required to have following env variables:
+* `VK_AUTH_LOGIN` - VKontakte login for automation tests
+* `VK_AUTH_PASSWORD` - VKontakte password for automation tests
+VKontakte [http://vk.com] is currently only one openid provider.
+author hates the facebook because it is an "umbrella" corporation with army of zombies. 
+
+
+    `npm run server:test:integration`
 
