@@ -34,11 +34,14 @@ VK monkeybar app has following
 
 
 # Debug (works with webpack hmr)
-1. `npm run server:start:debug`
+    
+    `npm run server:start:debug`
 
 # Unit Tests
-1. `npm run server:test:watch` - server side
-1. `npm run client:test:single-run` - client side
+    
+    `npm run server:test:watch` - server side
+    
+    `npm run client:test:single-run` - client side
 
 # Integration Tests (redis is required)
 
@@ -49,5 +52,5 @@ VKontakte [http://vk.com] is currently only one openid provider.
 author hates the facebook because it is an "umbrella" corporation with army of zombies. 
 
 
-1. `npm run server:test:integration`
+    `npm run server:test:integration`
 
