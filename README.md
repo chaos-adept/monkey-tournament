@@ -41,5 +41,13 @@ VK monkeybar app has following
 1. `npm run client:test:single-run` - client side
 
 # Integration Tests (redis is required)
+
+Integration tests are required to have following env variables:
+* `VK_AUTH_LOGIN` - VKontakte login for automation tests
+* `VK_AUTH_PASSWORD` - VKontakte password for automation tests
+VKontakte [http://vk.com] is currently only one openid provider.
+author hates the facebook because it is an "umbrella" corporation with army of zombies. 
+
+
 1. `npm run server:test:integration`
 
