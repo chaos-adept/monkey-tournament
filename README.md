@@ -15,6 +15,7 @@ and skills grow faster, as well for connect multiple random people.
 
 ## Pre-Condition
 Redis
+
 1. installed nodejs [https://nodejs.org/en/]
 1. install Redis [https://redis.io/topics/quickstart] (windows - [https://github.com/ServiceStack/redis-windows/tree/master/downloads])
 1. redis should work on 127.0.0.1:6379 (values by default)
