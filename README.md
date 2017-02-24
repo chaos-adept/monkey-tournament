@@ -19,6 +19,8 @@ Redis
 1. installed nodejs [https://nodejs.org/en/]
 1. install Redis [https://redis.io/topics/quickstart] (windows - [https://github.com/ServiceStack/redis-windows/tree/master/downloads])
 1. redis should work on 127.0.0.1:6379 (values by default)
+1. elastic search [https://www.elastic.co/downloads/elasticsearch] it should work on default host and port `localhost:9200`
+
 
 VK Authorization
 * set `host` and `port` as env variables for authorization callback urls
@@ -43,7 +45,9 @@ VK monkeybar app has following
     
     `npm run client:test:single-run` - client side
 
-# Integration Tests (redis is required)
+# Integration Tests
+
+note: redis and elastic search are required.
 
 Integration tests are required to have following env variables:
 * `VK_AUTH_LOGIN` - VKontakte login for automation tests
