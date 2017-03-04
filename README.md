@@ -38,6 +38,10 @@ VK monkeybar app has following
 # Debug (works with webpack hmr)
     
     `npm run server:start:debug`
+    
+    note: it works over https, self signed certifate is used.
+    warning in chrome could be disabled by 
+    `chrome://flags/#allow-insecure-localhost`
 
 # Unit Tests
     
@@ -58,3 +62,55 @@ author hates the facebook because it is an "umbrella" corporation with army of z
 
     `npm run server:test:integration`
 
+
+# PROD
+
+after artifact generation by `npm run build`
+
+it could be installed as daemon on server
+
+sample of bash service script
+```
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          monkeybargame
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Starts monkeybargame
+# Description:       Starts monkeybargameusing start-stop-daemon
+### END INIT INFO
+
+export host=ANYHOST
+export port=ANY_PORT
+export CERT_PRIVATE_KEY=PATH_TO_PRIVATE_KEY
+export CERT_PUBLIC_KEY=PATH_TO_PUBLIC_KEY
+
+set -e
+
+case "$1" in
+  start)
+    cd /home/chaos-adept/monkeybargame/monkey-tournament
+ 
+    nohup npm run server:start &
+    ;;
+  stop)
+    echo "no implemented"	
+    ;;
+  restart|force-reload)
+    ${0} stop
+    sleep 1
+    ${0} start
+    ;;
+  *)
+    N=/etc/init.d/$NAME
+    echo "Usage: $N {start|stop|restart|force-reload}" >&2
+    exit 1
+    ;;
+esac
+
+exit 0
+
+
+```
