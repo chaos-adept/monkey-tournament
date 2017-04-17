@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "clan": {
+      "type": "keyword"
+    }
+  }
+}
