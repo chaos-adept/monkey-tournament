@@ -1,7 +1,9 @@
 {
   "properties": {
     "clan": {
-      "type": "keyword"
+      "type": "keyword",
+      "doc_values" : "true",
+      "index": "not_analyzed"
     }
   }
 }
